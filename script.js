@@ -9,20 +9,19 @@ calculator.querySelectorAll("button").forEach(button => {
         }
         else if(button.innerHTML !== "="){
             if(result.innerHTML === "0"){
-            if(!/^\d/.test(button.innerHTML)){
-                alert("You can't use an operator first");
-            }
-            else{
                 result.innerHTML = button.innerHTML;
-            }
-                
             }
             else{
                 result.innerHTML += button.innerHTML;
             }
         }
         else{
-                result.innerHTML = eval(result.innerHTML);         
+                try{
+                    result.innerHTML = eval(result.innerHTML); 
+                }
+                catch{
+                    result.innerHTML = "Error";
+                }             
         }
     })
 });
