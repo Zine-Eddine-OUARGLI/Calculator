@@ -22,13 +22,7 @@ calculator.querySelectorAll("button").forEach(button => {
             }
         }
         else{
-            if(!/^\d/.test(result.innerHTML[0])){
-                result.innerHTML = "Error";
-            }
-            else{
-                result.innerHTML = eval(result.innerHTML);
-            }
-            
+                result.innerHTML = eval(result.innerHTML);         
         }
     })
 });
